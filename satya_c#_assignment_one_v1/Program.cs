@@ -9,9 +9,12 @@ namespace MindfireAssignmentOne
         private delegate int Result(int no);
         static void Main(string[] args)
         {
+            ICustomInput customInput = new CustomInputImplementer();
+            IValidation validation = new ValidationImplementer();
             int  option; 
             Console.WriteLine("Hello World To My First C# Programs !");
             Application obj = new Application();
+            obj.elements = customInput.GetUserNumbers();
             Console.WriteLine("+ --- Enter Your Choice --- +");
             Console.WriteLine("1 For Even Numbers Filters");
             Console.WriteLine("2 For Numbers Greater Than 10 Filters");
