@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace satya_c__assignment_one_v1
+namespace MindfireAssignmentOne
 {
     public delegate bool CheckValidity(int number);
-    class Program
+    class Application
     {
         private int[] elements = new int[10];
         private delegate int Result(int no);
@@ -11,8 +11,7 @@ namespace satya_c__assignment_one_v1
         {
             int  option; 
             Console.WriteLine("Hello World To My First C# Programs !");
-            Program obj = new Program();
-            obj.GetNumbers();
+            Application obj = new Application();
             Console.WriteLine("+ --- Enter Your Choice --- +");
             Console.WriteLine("1 For Even Numbers Filters");
             Console.WriteLine("2 For Numbers Greater Than 10 Filters");
