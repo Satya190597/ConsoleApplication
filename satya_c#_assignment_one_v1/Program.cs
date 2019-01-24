@@ -2,20 +2,40 @@
 
 namespace satya_c__assignment_one_v1
 {
-    public delegate void HelloFunctionDelegate(string strMessage);
+    public delegate bool CheckValidity(int number);
     class Program
     {
         private int[] elements = new int[10];
         private delegate int Result(int no);
-        private int option; 
         static void Main(string[] args)
         {
-            HelloFunctionDelegate del = new HelloFunctionDelegate(CustomDeligates.Hello);
-            del("Hello My First Delegate"); 
-            /* Console.WriteLine("Hello World!");
+            int  option; 
+            Console.WriteLine("Hello World To My First C# Programs !");
             Program obj = new Program();
             obj.GetNumbers();
-            Result obj_one = new Result(Program.ResultHandler); */
+            Console.WriteLine("+ --- Enter Your Choice --- +");
+            Console.WriteLine("1 For Even Numbers Filters");
+            Console.WriteLine("2 For Numbers Greater Than 10 Filters");
+            Console.WriteLine("3 For Divisible By 5 Filters");
+            option = Int32.Parse(Console.ReadLine());
+            CheckValidity objectOfDelegate = null;
+            if(option==1)
+            {
+                objectOfDelegate = new CheckValidity(obj.CheckEven);
+            }
+            else if(option==2)
+            {
+                objectOfDelegate = new CheckValidity(obj.GreaterThanTen);
+            }
+            else if(option==3)
+            {
+                objectOfDelegate = new CheckValidity(obj.DivisibleByFive);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input !");
+            }
+            Console.WriteLine("Result : "+obj.GetResult(obj.elements,objectOfDelegate));
         }
         private void GetNumbers()
         {
@@ -37,20 +57,21 @@ namespace satya_c__assignment_one_v1
             }
             Console.WriteLine(arr.Length);
         }
-        private static int ResultHandler(int option)
+        private String GetResult(int[] userNumbers,CheckValidity checkValidity)
         {
-            if(option==1)
-                return 1;
-            if(option==2)
-                return 2;
-            if(option==3)
-                return 3;
-            else
-                return 4;
+            String result = "";
+            foreach(int number in userNumbers)
+            {
+                if(checkValidity(number))
+                {
+                    result += " " + number + "";
+                }
+            }
+            return result;
         }
-        private bool CheckEven(int i)
+        public bool CheckEven(int number)
         {
-            if(i%2==0)
+            if(number%2==0)
             {
                 return true;
             }
@@ -82,12 +103,5 @@ namespace satya_c__assignment_one_v1
             }
         }
         
-    }
-    class CustomDeligates
-    {
-        public static void Hello(string strMessage)
-        {
-            Console.WriteLine(strMessage);
-        }
     }
 }
