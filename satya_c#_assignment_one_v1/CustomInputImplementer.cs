@@ -1,68 +1,81 @@
+///<summary>
+///     Implementer For ICustomInput Interface
+///     Used to provide appropriate menu and take user inputs
+///</summary>
 using System;
-class CustomInputImplementer : ICustomInput
+namespace CustomInput
 {
-    public int[] GetUserNumbers()
+    class CustomInputImplementer : ICustomInput
     {
-        int[] userNumbers = new int[10];
-        int index = 0,element = 0;
-        while(index < userNumbers.Length)
+        public int[] GetUserNumbers(int size)
         {
-            Console.Write("Enter The {0} Number \t: ",(index+1));
-            string userInput = Console.ReadLine();
-            if(Int32.TryParse(userInput,out element))
+            int[] userNumbers = new int[size];
+            int index = 0,element = 0;
+
+            do
             {
-                userNumbers[index++] = element;
-            }
-            else
-            {
-                Console.WriteLine("Warning : Please Enter Numeric Value !");
-            }
+                Console.Write("Enter The {0} Number :\t",(index+1));
+                string userInput = Console.ReadLine();
+                if(Int32.TryParse(userInput,out element))
+                {
+                    userNumbers[index++] = element;
+                }
+                else
+                {
+                    Console.WriteLine("\n>>> Warning : Please Enter Numeric Value ! <<<\n");
+                }
+            }while(index<userNumbers.Length);
+
+            return userNumbers;
         }
-        return userNumbers;
-    }
-    public int GetUserChoiceToFilter()
-    {
-        string userInput;
-        do
+        public int GetUserChoiceToFilter()
         {
-            Console.WriteLine("+ --- Enter Your Choice --- +");
-            Console.WriteLine("1 For Even Numbers Filters");
-            Console.WriteLine("2 For Numbers Greater Than 10 Filters");
-            Console.WriteLine("3 For Divisible By 5 Filters");
-            Console.WriteLine("0 To Exit");
-            Console.WriteLine("------------------------------");
-            Console.Write("Enter (1,2,3 or 0) :\t");
-            userInput = Console.ReadLine();
-            if(userInput == "1" || userInput== "2" || userInput == "3" || userInput == "0")
+            string userInput = "";
+
+            do
             {
-                return Int32.Parse(userInput);
-            }
-            else
-            {
-               Console.WriteLine("Please Enter A Valid Option :\t");
-            }
-        }while(true);
-    }
-    public int GetUserChoiceToContinue()
-    {
-        string userInput;
-        do
+                Console.WriteLine("+++++++++++++ Enter Your Choice +++++++++++++");
+                Console.WriteLine("+ 1 For Even Numbers Filters                +");
+                Console.WriteLine("+ 2 For Numbers Greater Than 10 Filters     +");
+                Console.WriteLine("+ 3 For Divisible By 5 Filters              +");
+                Console.WriteLine("+ 0 To Cancel                               +");
+                Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++");
+                Console.Write("Enter (1,2,3 or 0) :\t");
+                userInput = Console.ReadLine();
+                if(userInput == "1" || userInput== "2" || userInput == "3" || userInput == "0")
+                {
+                    return Int32.Parse(userInput);
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("\n>>> Please Enter A Valid Option <<<\n");
+                }
+            }while(true);
+
+        }
+        public int GetUserChoiceToContinue()
         {
-            Console.WriteLine("+ --- Enter Your Choice --- +");
-            Console.WriteLine("1 To Restart ");
-            Console.WriteLine("2 To Apply Different Filter ");
-            Console.WriteLine("0 To Exit ");
-            Console.WriteLine("-----------------------------");
-            Console.Write("Enter (1,2 or 0) :\t");
-            userInput = Console.ReadLine();
-            if(userInput == "1" || userInput == "2" || userInput == "0" )
+            string userInput = "";
+            do
             {
-                return Int32.Parse(userInput);
-            }
-            else
-            {
-                Console.WriteLine("Please Enter A Valid Option :\t");
-            }
-        }while(true);
+                Console.WriteLine("+ +++++ Enter Your Choice +++++");
+                Console.WriteLine("+ 1 To Restart                +");
+                Console.WriteLine("+ 2 To Apply Different Filter +");
+                Console.WriteLine("+ 0 To Exit                   +");
+                Console.WriteLine("+++++++++++++++++++++++++++++++");
+                Console.Write("Enter (1,2 or 0) :\t");
+                userInput = Console.ReadLine();
+                if(userInput == "1" || userInput == "2" || userInput == "0" )
+                {
+                    return Int32.Parse(userInput);
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("\n>>> Please Enter A Valid Option <<<\n");
+                }
+            }while(true);
+        }
     }
 }

@@ -1,6 +1,13 @@
-interface ICustomInput
+///<summary>
+///     Custom Input Interface
+///     Conatins menu driven user input options.
+///</summary>
+namespace CustomInput
 {
-    int[] GetUserNumbers();
-    int GetUserChoiceToFilter();
-    int GetUserChoiceToContinue();
+    interface ICustomInput
+    {
+        int[] GetUserNumbers(int size);
+        int GetUserChoiceToFilter();
+        int GetUserChoiceToContinue();
+    }
 }
