@@ -22,6 +22,26 @@ class CustomInputImplementer : ICustomInput
     }
     public int GetUserChoice()
     {
-        return 1;
+        do
+        {
+            string userInput;
+            int option;
+            Console.WriteLine("+ --- Enter Your Choice --- +");
+            Console.WriteLine("1 For Even Numbers Filters");
+            Console.WriteLine("2 For Numbers Greater Than 10 Filters");
+            Console.WriteLine("3 For Divisible By 5 Filters");
+            Console.WriteLine("0 To Exit");
+            Console.WriteLine("------------------------------");
+            Console.Write("Enter (1,2,3 or 0) :\t");
+            userInput = Console.ReadLine();
+            if(Int32.TryParse(userInput,out option))
+            {
+                return option;
+            }
+            else
+            {
+                Console.WriteLine("Please Enter A Valid Option : ");
+            }
+        }while(true);
     }
 }

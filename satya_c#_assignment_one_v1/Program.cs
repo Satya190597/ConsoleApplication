@@ -15,11 +15,11 @@ namespace MindfireAssignmentOne
             Console.WriteLine("Hello World To My First C# Programs !");
             Application obj = new Application();
             obj.elements = customInput.GetUserNumbers();
-            Console.WriteLine("+ --- Enter Your Choice --- +");
+            /* Console.WriteLine("+ --- Enter Your Choice --- +");
             Console.WriteLine("1 For Even Numbers Filters");
             Console.WriteLine("2 For Numbers Greater Than 10 Filters");
-            Console.WriteLine("3 For Divisible By 5 Filters");
-            option = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("3 For Divisible By 5 Filters"); */
+            option = customInput.GetUserChoice();
             CheckValidity objectOfDelegate = null;
             if(option==1)
             {

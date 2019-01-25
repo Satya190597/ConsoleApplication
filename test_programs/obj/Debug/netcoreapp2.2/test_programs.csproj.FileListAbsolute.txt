@@ -1,0 +1,11 @@
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\bin\Debug\netcoreapp2.2\test_programs.deps.json
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\bin\Debug\netcoreapp2.2\test_programs.runtimeconfig.json
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\bin\Debug\netcoreapp2.2\test_programs.runtimeconfig.dev.json
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\bin\Debug\netcoreapp2.2\test_programs.dll
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\bin\Debug\netcoreapp2.2\test_programs.pdb
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\obj\Debug\netcoreapp2.2\test_programs.csprojAssemblyReference.cache
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\obj\Debug\netcoreapp2.2\test_programs.csproj.CoreCompileInputs.cache
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\obj\Debug\netcoreapp2.2\test_programs.AssemblyInfoInputs.cache
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\obj\Debug\netcoreapp2.2\test_programs.AssemblyInfo.cs
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\obj\Debug\netcoreapp2.2\test_programs.dll
+D:\satya\walk_through_c#\ConsoleApplications\test_programs\obj\Debug\netcoreapp2.2\test_programs.pdb
