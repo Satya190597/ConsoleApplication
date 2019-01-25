@@ -12,52 +12,32 @@ namespace MindfireAssignmentOne
             ICustomInput customInput = new CustomInputImplementer();
             IValidation validation = new ValidationImplementer();
             int  option; 
-            Console.WriteLine("Hello World To My First C# Programs !");
-            Application obj = new Application();
-            obj.elements = customInput.GetUserNumbers();
-            /* Console.WriteLine("+ --- Enter Your Choice --- +");
-            Console.WriteLine("1 For Even Numbers Filters");
-            Console.WriteLine("2 For Numbers Greater Than 10 Filters");
-            Console.WriteLine("3 For Divisible By 5 Filters"); */
-            option = customInput.GetUserChoice();
-            CheckValidity objectOfDelegate = null;
-            if(option==1)
+            do
             {
-                objectOfDelegate = new CheckValidity(obj.CheckEven);
-            }
-            else if(option==2)
-            {
-                objectOfDelegate = new CheckValidity(obj.GreaterThanTen);
-            }
-            else if(option==3)
-            {
-                objectOfDelegate = new CheckValidity(obj.DivisibleByFive);
-            }
-            else
-            {
-                Console.WriteLine("Invalid Input !");
-            }
-            Console.WriteLine("Result : "+obj.GetResult(obj.elements,objectOfDelegate));
-        }
-        private void GetNumbers()
-        {
-            int[] arr = new int[10];
-            int index = 0;
-            while(index<arr.Length)
-            {
-                Console.Write("Enter The {0} Number \t: ",(index+1));
-                string userInput = Console.ReadLine();
-                int element;
-                if(Int32.TryParse(userInput,out element))
+                Console.WriteLine("Hello World To My First C# Programs !");
+                Application obj = new Application();
+                obj.elements = customInput.GetUserNumbers();
+                do
                 {
-                    this.elements[index++] = element;
-                }
-                else
-                {
-                    Console.WriteLine("Warning : Please Enter Numeric Value !");
-                }
-            }
-            Console.WriteLine(arr.Length);
+                    option = customInput.GetUserChoiceToFilter();
+                    CheckValidity objectOfDelegate = null;
+                    if(option==1)
+                    {
+                        objectOfDelegate = new CheckValidity(validation.CheckEven);
+                    }
+                    else if(option==2)
+                    {
+                        objectOfDelegate = new CheckValidity(validation.CheckLessThanTen);
+                    }
+                    else if(option==3)
+                    {
+                        objectOfDelegate = new CheckValidity(validation.CheckDivisibleByFive);
+                    }
+                    if(objectOfDelegate!=null)
+                        Console.WriteLine("Result : "+obj.GetResult(obj.elements,objectOfDelegate));
+                    option = customInput.GetUserChoiceToContinue();
+                }while(option!=0 && option!=1);
+            }while(option!=0);
         }
         private String GetResult(int[] userNumbers,CheckValidity checkValidity)
         {
@@ -71,39 +51,5 @@ namespace MindfireAssignmentOne
             }
             return result;
         }
-        public bool CheckEven(int number)
-        {
-            if(number%2==0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        private bool GreaterThanTen(int i)
-        {
-            if(i>10)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        private bool DivisibleByFive(int i)
-        {
-            if(i%5==0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        
     }
 }

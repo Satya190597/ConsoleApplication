@@ -1,5 +1,6 @@
 interface ICustomInput
 {
     int[] GetUserNumbers();
-    int GetUserChoice();
+    int GetUserChoiceToFilter();
+    int GetUserChoiceToContinue();
 }

@@ -20,12 +20,11 @@ class CustomInputImplementer : ICustomInput
         }
         return userNumbers;
     }
-    public int GetUserChoice()
+    public int GetUserChoiceToFilter()
     {
+        string userInput;
         do
         {
-            string userInput;
-            int option;
             Console.WriteLine("+ --- Enter Your Choice --- +");
             Console.WriteLine("1 For Even Numbers Filters");
             Console.WriteLine("2 For Numbers Greater Than 10 Filters");
@@ -34,13 +33,35 @@ class CustomInputImplementer : ICustomInput
             Console.WriteLine("------------------------------");
             Console.Write("Enter (1,2,3 or 0) :\t");
             userInput = Console.ReadLine();
-            if(Int32.TryParse(userInput,out option))
+            if(userInput == "1" || userInput== "2" || userInput == "3" || userInput == "0")
             {
-                return option;
+                return Int32.Parse(userInput);
             }
             else
             {
-                Console.WriteLine("Please Enter A Valid Option : ");
+               Console.WriteLine("Please Enter A Valid Option :\t");
+            }
+        }while(true);
+    }
+    public int GetUserChoiceToContinue()
+    {
+        string userInput;
+        do
+        {
+            Console.WriteLine("+ --- Enter Your Choice --- +");
+            Console.WriteLine("1 To Restart ");
+            Console.WriteLine("2 To Apply Different Filter ");
+            Console.WriteLine("0 To Exit ");
+            Console.WriteLine("-----------------------------");
+            Console.Write("Enter (1,2 or 0) :\t");
+            userInput = Console.ReadLine();
+            if(userInput == "1" || userInput == "2" || userInput == "0" )
+            {
+                return Int32.Parse(userInput);
+            }
+            else
+            {
+                Console.WriteLine("Please Enter A Valid Option :\t");
             }
         }while(true);
     }
