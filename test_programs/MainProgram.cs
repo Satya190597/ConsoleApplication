@@ -6,10 +6,16 @@ namespace test_programs
     {
         static void Main(string[] args)
         {
-            // Only call Other Classes
-            //EnumsProgram.DisplayMyEnums();
-            //EnumsProgram.GetUserEnums();
-            EnumsProgram.GetIdAndName();
+            // ***** Only call Other Classes *****
+            /*
+                Enums Program Methods Calls
+                1. EnumsProgram.DisplayMyEnums();
+                2. EnumsProgram.GetUserEnums();
+                3. EnumsProgram.GetIdAndName();
+             */
+            PropertiesProgram obj = new PropertiesProgram();
+            PropertiesProgram.SetEmployeeDetails(obj,"Satya Prakash Nandy",35,"nandy@yahoo.in");
+            PropertiesProgram.DisplayEmployeeDetails(obj);
         }
     }
 }
