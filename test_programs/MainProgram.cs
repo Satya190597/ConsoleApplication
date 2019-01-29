@@ -21,6 +21,7 @@ namespace test_programs
             */
             GenericCollectionsProgram obj = new GenericCollectionsProgram("Satya","Rahul","Ravi","Aslam","Charles");
             obj.EmployeeNames();
+            obj.EmployeeNamesWithId();
         }
     }
 }
