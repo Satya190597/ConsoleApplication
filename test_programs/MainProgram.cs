@@ -15,13 +15,16 @@ namespace test_programs
              */
             /*
                 Properties Program Nethods Calls
-                PropertiesProgram obj = new PropertiesProgram();
-                PropertiesProgram.SetEmployeeDetails(obj,"Satya Prakash Nandy",35,"nandy@yahoo.in");
-                PropertiesProgram.DisplayEmployeeDetails(obj);
+                1. PropertiesProgram obj = new PropertiesProgram();
+                2. PropertiesProgram.SetEmployeeDetails(obj,"Satya Prakash Nandy",35,"nandy@yahoo.in");
+                3. PropertiesProgram.DisplayEmployeeDetails(obj);
             */
-            GenericCollectionsProgram obj = new GenericCollectionsProgram("Satya","Rahul","Ravi","Aslam","Charles");
-            obj.EmployeeNames();
-            obj.EmployeeNamesWithId();
+            /* 
+                Generics Program Methods Calls
+                GenericCollectionsProgram obj = new GenericCollectionsProgram("Satya","Rahul","Ravi","Aslam","Charles");
+                1. obj.EmployeeNames();
+                2. obj.EmployeeNamesWithId();
+            */
         }
     }
 }
