@@ -65,7 +65,7 @@ namespace MindfireAssignmentOne
         }
 
         // Apply Filter And Return Result In String Format
-        private  String GetResult(int[] userNumbers,CheckValidity checkValidity)
+        private  string GetResult(int[] userNumbers,CheckValidity checkValidity)
         {
             String result = "";
             foreach(int number in userNumbers)
